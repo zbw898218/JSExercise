@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			div{
+				width: 700px;
+				margin: 0 auto;
+			}
+			th{
+				width: 300px;
+				height: 50px;
+			}
+			button{
+				width: 50px;
+				height: 50px;
+				
+			}
+			button:hover{
+				color: yellow;
+			}
+			input{
+				width:295px ;
+				height: 25px;
+				/*margin-right: 5px;*/
+				padding-right: 0;
+				text-align: right;
+				line-height: 25px;
+				
+			}
+			input::-webkit-input-placeholder{
+				font:oblique 16px "微软雅黑";
+				color: red;
+				
+			}
+			#zero{
+				width: 117px;
+				height: 50px;
+				
+			}
+			#equal{
+				width: 52px;
+				height: 50px;
+		
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div id="comp">
+			<table border="0" cellspacing="5px" cellpadding="">
+				<tr><th colspan="5">
+					<input type="text" name="forms" id="forms" placeholder="formula equation" />
+					<input type="text" name="answer" id="answer" placeholder="answer" onclick="funEquals()"/>
+				</th></tr>
+				<tr><td><button type="button" id="seven" value="7" onclick="funNumber('7')">7</button></td>
+					<td><button type="button" id="eight" value="8" onclick="funNumber('8')">8</button></td>
+					<td><button type="button" id="nine"  value="9" onclick="funNumber('9')">9</button></td>
+					<td><button type="button" id="divide" value="/" onclick="funNumber('/')">/</button></td>
+					<td><button type="button" id="qumo" value="%" onclick="funNumber('%')">%</button></td></tr>
+				<tr><td><button type="button" id="four"  value="4" onclick="funNumber('4')">4</button></td><td>
+					<button type="button" id="five"  value="5" onclick="funNumber('5')">5</button></td>
+					<td><button type="button" id="six"  value="6" onclick="funNumber('6')">6</button></td>
+					<td><button type="button" id="multiply" value="*" onclick="funNumber('*')">*</button></td>
+					<td><button type="button" id="reset" value="RE" onclick="funReset()">RE</button></td></tr>
+				<tr><td><button type="button" id="one"  value="1" onclick="funNumber('1')">1</button></td>
+					<td><button type="button" id="two" value="2" onclick="funNumber('2')">2</button></td>
+					<td><button type="button" id="three"  value="3" onclick="funNumber('3')">3</button></td>
+					<td><button type="button" id="minuse" value="-" onclick="funNumber('-')">-</button></td>
+					<td><button type="button" id="back" value="←" onclick="funBack()">←</button></td></tr>
+				<tr><td colspan="2"><button type="button" id="zero"  value="0" onclick="funNumber('0')">0</button></td>
+					<td><button type="button" id="point"  value="." onclick="funNumber('.')">.</button></td>
+					<td><button type="button" id="adding"  value="+" onclick="funNumber('+')">+</button></td>
+				<td ><button type="button" id="equal" value="=" onclick="funEquals()">=</button></td></tr>
+			</table>
+		</div>
+		<script src="js3.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
