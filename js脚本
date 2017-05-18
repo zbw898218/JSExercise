@@ -1,0 +1,68 @@
+var txt="";
+var lastNum="";
+function funNumber(num){
+	lastNum=txt;
+	txt+=num;
+	document.getElementById("forms").value=txt;
+
+}
+function funReset(){
+	txt="";
+	document.getElementById("forms").value="";
+	document.getElementById("answer").value="";
+}
+function funEquals(){
+	var arr;
+	jia= txt.indexOf("+");
+	jian=txt.indexOf("-");
+	chen=txt.indexOf("*");
+	chu=txt.indexOf("/");
+	moshu=txt.indexOf("%");
+	 	var bo1=(jia==-1&&jian==-1&&chen==-1&&chu==-1&&moshu==-1);
+	 	
+	 	console.log(bo1)
+		console.log(txt);
+	if(bo1)
+	{
+		document.getElementById("answer").value="Error!";
+		document.getElementById("forms").value="";
+	}else 
+	{
+			if(jia!=-1){
+			arr=txt.split("+");
+			answ=parseFloat(arr[0])+parseFloat(arr[1])
+				txt=answ;
+				console.log(answ)
+			document.getElementById("answer").value=answ;
+			}else if(jian!=-1){
+				arr=txt.split("-");
+				answ=parseFloat(arr[0])-parseFloat(arr[1])
+				txt=answ;
+				console.log(answ)
+			document.getElementById("answer").value=answ;
+			}else if(chen!=-1){
+				arr=txt.split("*");
+				answ=parseFloat(arr[0])*parseFloat(arr[1])
+				txt=answ;
+				console.log(answ)
+			document.getElementById("answer").value=answ;
+			}else if(chu!=-1){
+				arr=txt.split("/");
+				answ=parseFloat(arr[0])/parseFloat(arr[1])
+				txt=answ;
+				console.log(answ)
+			document.getElementById("answer").value=answ;
+			}else if(moshu!=-1){
+				arr=txt.split("%");
+				answ=parseFloat(arr[0])%parseFloat(arr[1])
+				txt=answ;
+				console.log(answ)
+			document.getElementById("answer").value=answ;
+			}
+		}
+
+}
+function funBack(){
+	document.getElementById("forms").value=lastNum;
+	txt=lastNum;
+}
