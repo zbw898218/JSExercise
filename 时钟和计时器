@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>时钟和计时器</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			div{
+				width: 400px;
+				height: 400px;
+				border: 1px solid blueviolet;
+				background: -webkit-radial-gradient(yellow,blue);
+				border-radius: 200px;
+				margin: 0 auto;
+			}
+			input{
+				width: 200px;
+				height: 60px;
+				
+				text-align: center;
+				font:300 16px "微软雅黑";
+				color: red;
+				
+			}
+			#now{
+				position: relative;
+				margin-left:60px;
+				margin-top: 80px;
+			}
+			#clock{
+				position: relative;
+				margin-left:60px;
+				margin-top: 80px;
+			}
+			button{
+				width: 60px;
+				height: 30px;
+			}
+			
+			input::-webkit-input-placeholder{
+				text-align: right;
+				font:oblique 500 20px "微软雅黑";
+				color: red;
+				text-align: center;
+				line-height: 16px;
+			}
+		</style>
+	</head>
+	<body onload="funTime()" >
+		<div class="time">
+			<input type="text" name="now" id="now" placeholder="当前时间"  onmouseleave="funInputColor1()" onmousemove="funInputColor2()"/>
+			<button type="button" value="开始计时" onclick="Clock1()">开始计时</button><br />
+			<button type="button" value="结束计时" onclick="Clock2()">结束计时</button>
+			<input type="text" name="clock" id="clock" placeholder="number second" />
+			<script type="text/javascript">
+				var timeStr="";
+				var t;
+				var c=0
+				function funTime(){
+					
+					var time=new Date();
+					timeStr=time.getFullYear()+"年"+time.getMonth()+"月"+time.getDay()+"日"+
+					time.getHours()+"："+time.getMinutes()+"："+time.getSeconds();
+					document.getElementById("now").value=timeStr;
+//					c++;
+					t=setTimeout("funTime()",1000);
+//					console.log(timeStr);
+					}
+				function funInputColor1(){
+					document.getElementById("now").style.background="-webkit-linear-gradient(red,blue)"
+				}
+				function funInputColor2(){
+					document.getElementById("now").style.background="-webkit-radial-gradient(orange,red)"
+				}
+				function Clock1(){
+					document.getElementById("clock").value=c;
+					c++;
+					t=setTimeout("Clock1()",1000);
+				}
+				function Clock2(){
+					location.reload()
+				}
+			</script>
+		</div>
+	</body>
+</html>
